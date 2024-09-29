@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio/Video Transcription</title>
+</head>
+<body>
+    <h1>Audio/Video Transcription</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        Upload Video/Audio File: <input type="file" name="file" accept="audio/*,video/*"><br>
+        <input type="submit" value="Upload and Transcribe">
+    </form>
+    <div id="spinner" style="display:none;">
+        <p>Transcribing... <span id="time-info"></span></p>
+    </div>
+    <div id="progress-bar" style="width: 100%; background-color: #f3f3f3; height: 30px; display:none;">
+        <div id="progress" style="width: 0%; height: 100%; background-color: #4caf50;"></div>
+    </div>
+    <div id="status"></div>
+    <pre id="transcript"></pre>
+    <button id="copy-button" onclick="copyToClipboard()" style="display:none;">Copy to Clipboard</button>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
